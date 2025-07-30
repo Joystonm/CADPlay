@@ -5,7 +5,6 @@ import { SceneProvider } from './context/SceneContext'
 import AppRouter from './router'
 import Navbar from './components/Navbar'
 import ErrorBoundary from './components/ErrorBoundary'
-import DebugPanel from './components/DebugPanel'
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
             <div className="App">
               <Navbar />
               <AppRouter />
-              {import.meta.env.DEV && <DebugPanel />}
             </div>
           </Router>
         </SceneProvider>

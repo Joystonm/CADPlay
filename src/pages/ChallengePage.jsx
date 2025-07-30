@@ -54,10 +54,6 @@ const ChallengePage = () => {
               <div>Total Challenges</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold">{completedChallenges.length}</div>
-              <div>Completed</div>
-            </div>
-            <div className="text-center">
               <div className="text-2xl font-bold">
                 {challengesData.challenges.filter(c => c.assistiveTechFocus).length}
               </div>
@@ -68,23 +64,6 @@ const ChallengePage = () => {
       </div>
 
       <div className="container mx-auto px-4 py-8">
-        {/* Progress Overview */}
-        <div className="mb-8 bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-semibold mb-4">Your Progress</h2>
-          <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
-            <div 
-              className="bg-blue-600 h-3 rounded-full transition-all duration-300"
-              style={{ 
-                width: `${(completedChallenges.length / challengesData.challenges.length) * 100}%` 
-              }}
-            ></div>
-          </div>
-          <div className="flex justify-between text-sm text-gray-600">
-            <span>{completedChallenges.length} of {challengesData.challenges.length} challenges completed</span>
-            <span>{Math.round((completedChallenges.length / challengesData.challenges.length) * 100)}%</span>
-          </div>
-        </div>
-
         {/* Challenges by Category */}
         {Object.entries(categorizedChallenges).map(([categoryKey, challenges]) => {
           const categoryInfo = challengesData.categories[categoryKey];
